@@ -1,0 +1,70 @@
+[
+	{
+	    "keys": ["j", "k"],
+	    "command": "exit_insert_mode",
+	    "context": [
+	        { "key": "setting.command_mode", "operand": false },
+	        { "key": "setting.is_widget", "operand": false }
+	    ]
+	},
+    {
+        "keys": ["g", "s"],
+        "command": "lsp_hover",
+        "context": [
+        	{ "key": "setting.command_mode", "operand": true },
+            {
+                "key": "lsp.session_with_capability",
+                "operator": "equal",
+                "operand": "hoverProvider"
+            }
+        ]
+    },
+    {
+        "command": "lsp_symbol_implementation",
+        "args": {
+            "side_by_side": false
+        },
+        "keys": ["g", "i"],
+        "context": [
+        	{ "key": "setting.command_mode", "operand": true },
+            {
+                "key": "lsp.session_with_capability",
+                "operator": "equal",
+                "operand": "implementationProvider"
+            },
+            {
+                "key": "auto_complete_visible",
+                "operator": "equal",
+                "operand": false
+            }
+        ]
+	},
+    {
+        "command": "lsp_signature_help_show",
+        "keys": [
+            "ctrl+k"
+        ],
+        "context": [
+        	{ "key": "setting.command_mode", "operand": false },
+            {
+                "key": "lsp.signature_help_available",
+                "operator": "equal",
+                "operand": true
+            }
+        ]
+    },
+    { "keys": ["ctrl+["], "command": "exit_insert_mode", "context": [{"key": "setting.command_mode", "operand": false}] },
+    { "keys": ["ctrl+["], "command": "exit_visual_mode", "context": [{"key": "setting.command_mode", "operand": true}] },
+    { "keys": ["ctrl+]"], "command": "" },
+    { "keys": ["ctrl+t"], "command": "toggle_side_bar", "context": [{"key": "setting.command_mode", "operand": true}] },
+    { "keys": ["ctrl+n"], "command": "find_under_expand", "context": [{"key": "setting.command_mode", "operand": true}] },
+
+    // terminus
+    { "keys": ["ctrl+q"], "command": "toggle_terminus_panel", "context": [{"key": "setting.command_mode", "operand": true}]},
+    { "keys": ["\\", "q"], "command": "terminus_open", "context": [{"key": "setting.command_mode", "operand": true}]},
+    { "keys": ["\\", "Q"], "command": "terminus_open", "args": { "cwd": "${file_path:${folder}}" }, "context": [{"key": "setting.command_mode", "operand": true}]},
+    { "keys": ["ctrl+q"], "command": "toggle_terminus_panel", "context": [{"key": "terminus_view"}] },
+
+    // vintage
+    { "keys": ["g", "c"], "command": "toggle_comment", "args": { "block": false }, "context": [{"key": "setting.command_mode", "operand": true}] },
+]
