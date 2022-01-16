@@ -1,0 +1,38 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "ctrl+w h",
+        "command": "workbench.action.navigateLeft",
+        "when": "!editorFocus"
+    },
+    {
+        "key": "ctrl+w l",
+        "command": "workbench.action.navigateRight",
+        "when": "!editorFocus"
+    },
+    {
+        "key": "ctrl+w k",
+        "command": "workbench.action.navigateUp",
+        "when": "!editorFocus"
+    },
+    {
+        "key": "ctrl+w j",
+        "command": "workbench.action.navigateDown",
+        "when": "!editorFocus"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "workbench.files.action.focusFilesExplorer",
+        "when": "!explorerViewletVisible"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.closeSidebar",
+        "when": "explorerViewletVisible"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "editor.action.addSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
+]

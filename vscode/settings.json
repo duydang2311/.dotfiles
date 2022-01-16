@@ -1,0 +1,179 @@
+{
+    "editor.fontFamily": "Iosevka Mayukai Sonata",
+    "editor.fontSize": 16,
+    "editor.fontLigatures": true,
+    "editor.fontWeight": 300,
+    "editor.renderControlCharacters": true,
+    "editor.renderWhitespace": "trailing",
+    "editor.cursorSurroundingLines": 10,
+    "editor.minimap.enabled": false,
+    "editor.renderLineHighlight": "none",
+    "editor.overviewRulerBorder": false,
+    "editor.hideCursorInOverviewRuler": true,
+    "editor.renderFinalNewline": true,
+    "editor.guides.indentation": false,
+    "editor.showFoldingControls": "always",
+    "editor.glyphMargin": true,
+    "editor.cursorBlinking": "expand",
+    "editor.cursorSurroundingLinesStyle": "all",
+    "editor.unicodeHighlight.invisibleCharacters": true,
+    "editor.roundedSelection": false,
+    "editor.guides.bracketPairs": "active",
+    "editor.guides.bracketPairsHorizontal": "active",
+    "editor.guides.highlightActiveBracketPair": true,
+    "editor.guides.highlightActiveIndentation": true,
+    "editor.language.colorizedBracketPairs": [
+        ["(", ")"],
+        ["[", "]"],
+        ["<", ">"]
+    ],
+
+    "files.insertFinalNewline": true,
+    
+    "terminal.integrated.fontFamily": "Lekton Nerd Font",
+    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.fontWeight": 600,
+    "terminal.integrated.drawBoldTextInBrightColors": false,
+    "terminal.integrated.gpuAcceleration": "off",
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell",
+            "args": ["/nologo"]
+        }
+    },
+
+    "explorer.openEditors.visible": 0,
+
+    "workbench.editor.showTabs": false,
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.editor.tabCloseButton": "off",
+    "workbench.activityBar.visible": false,
+    "workbench.iconTheme": "moxer-icons",
+    "workbench.colorTheme": "Ziggy Stardust Dark",
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#204182cc",
+        "statusBar.noFolderBackground": "#204182cc",
+        "statusBar.debuggingBackground": "#204182cc",
+        "statusBar.foreground": "#ffffff",
+        "statusBar.debuggingForeground": "#ffffff"
+    },
+
+    "window.menuBarVisibility": "toggle",
+    "window.enableMenuBarMnemonics": false,
+    "window.autoDetectColorScheme": true,
+    "window.titleSeparator": " ➖ ",
+
+    "telemetry.telemetryLevel": "error",
+
+    "singleEditorTabs.saveBehaviour": "ask",
+
+    "[svelte]": {
+        "editor.defaultFormatter": "svelte.svelte-vscode"
+    },
+    "svelte.enable-ts-plugin": true,
+
+    "vim.cursorStylePerMode.normal": "block",
+    "vim.cursorStylePerMode.insert": "line",
+    "vim.useSystemClipboard": true,
+    "vim.hlsearch": true,
+    "vim.incsearch": true,
+    "vim.foldfix": true,
+    "vim.smartRelativeLine": true,
+    "vim.scroll": 8,
+    "vim.handleKeys": {
+        "<C-f>": false,
+    },
+    "vim.highlightedyank.enable": true,
+    "vim.highlightedyank.color": "rgba(89, 119, 107, 0.5)",
+    "vim.statusBarColorControl": true,
+
+
+    // Dusky
+    "vim.statusBarColors.normal": ["#242424", "#ffffff"],
+    "vim.statusBarColors.insert": ["#608B4E", "#ffffff"],
+    "vim.statusBarColors.visual": ["#204182cc", "#ffffff"],
+    "vim.statusBarColors.visualline": ["#204182cc", "#ffffff"],
+    "vim.statusBarColors.visualblock": ["#204182cc", "#ffffff"],
+    "vim.statusBarColors.replace": "#D08770",
+    "vim.statusBarColors.commandlineinprogress": "#171719",
+
+    "vim.statusBarColors.searchinprogressmode": "#007ACC",
+    "vim.statusBarColors.easymotionmode": "#007ACC",
+    "vim.statusBarColors.easymotioninputmode": "#007ACC",
+    "vim.statusBarColors.surroundinputmode": "#007ACC",
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [ "g", "s" ],
+            "commands": [ "editor.action.showHover" ]
+        },
+        {
+            "before": ["C-w", "h"],
+            "commands": [ "workbench.action.navigateLeft" ]
+        },
+        {
+            "before": ["C-w", "l"],
+            "commands": [ "workbench.action.navigateRight" ]
+        },
+        {
+            "before": ["C-w", "k"],
+            "commands": [ "workbench.action.navigateUp" ]
+        },
+        {
+            "before": ["C-w", "j"],
+            "commands": [ "workbench.action.navigateDown" ]
+        }
+    ],
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "k"
+            ],
+            "after": [
+                "C-["
+            ],
+        },
+        {
+            "before": [ "C-k" ],
+            "commands": [ "editor.action.triggerParameterHints" ],
+            "when": "editorTextFocus"
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        },
+        {
+            "before": [
+                "p",
+            ],
+            "after": [
+                "p",
+                "g",
+                "v",
+                "y"
+            ]
+        }
+    ],
+    "gitlens.hovers.currentLine.details": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "terminal.integrated.tabs.enabled": false,
+    "window.zoomLevel": 1,
+    // "clangd.arguments": [
+    //     "--compile-commands-dir=${workspaceFolder}/.clangd"
+    // ]
+}
