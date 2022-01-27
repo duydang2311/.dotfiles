@@ -44,8 +44,6 @@
 
 - svelte.svelte-vscode
 
-- vangware.dark-plus-tailwind
-
 - vscodevim.vim
 
 - wayou.vscode-todo-highlight
