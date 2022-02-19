@@ -33,6 +33,105 @@
     {
         "key": "ctrl+n",
         "command": "editor.action.addSelectionToNextFindMatch",
-        "when": "editorFocus"
+        "when": "textInputFocus && !suggestWidgetVisible"
     },
+    {
+        "key": "g s",
+        "command": "editor.action.showHover",
+        "when": "neovim.mode == normal && editorTextFocus"
+    },
+    {
+        "key": "g g",
+        "command": "cursorTop",
+        "when": "neovim.mode == normal && editorTextFocus"
+    },
+    {
+        "key": "shift+g",
+        "command": "cursorBottom",
+        "when": "neovim.mode == normal && editorTextFocus",
+    },
+    {
+        "key": "j",
+        "command": "vscode-neovim.compositeEscape1",
+        "when": "neovim.mode == insert && editorTextFocus",
+        "args": "j"
+    },
+    {
+        "key": "k",
+        "command": "vscode-neovim.compositeEscape2",
+        "when": "neovim.mode == insert && editorTextFocus",
+        "args": "k"
+    },
+    {
+        "key": "Escape",
+        "command": "macros.fixEscape",
+        "when": "neovim.mode == visual && editorHasSelection && editorTextFocus",
+    },
+    {
+        "key": "ctrl+k",
+        "command": "editor.action.triggerParameterHints",
+        "when": "neovim.mode == insert && editorTextFocus"
+    },
+    {
+        "key": "d",
+        "command": "deleteLeft",
+        "when": "editorHasMultipleSelections"
+    },
+    {
+        "key": "shift+k",
+        "command": "editor.action.triggerParameterHints",
+        "when": "neovim.mode == normal && editorTextFocus"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "cursorMove",
+        "when": "editorTextFocus",
+        "args": {
+            "to": "down",
+            "by": "halfLine",
+            "value": 4,
+        }
+    },
+    {
+        "key": "ctrl+d",
+        "command": "cursorMove",
+        "when": "neovim.mode == visual && editorTextFocus",
+        "args": {
+            "to": "down",
+            "by": "halfLine",
+            "value": 4,
+            "select": true,
+        }
+    },
+    {
+        "key": "ctrl+u",
+        "command": "cursorMove",
+        "when": "editorTextFocus",
+        "args": {
+            "to": "up",
+            "by": "halfLine",
+            "value": 4,
+        }
+    },
+    {
+        "key": "ctrl+u",
+        "command": "cursorMove",
+        "when": "neovim.mode == visual && editorTextFocus",
+        "args": {
+            "to": "up",
+            "by": "halfLine",
+            "value": 4,
+            "select": true,
+        }
+    },
+    {
+        "key": "ctrl+p",
+        "command": "-list.focusUp",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "-list.focusUp",
+        "when": "inReferenceSearchEditor && neovim.mode == 'normal'"
+    }
 ]
