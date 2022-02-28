@@ -4,46 +4,34 @@
 
 - albert.TabOut
 
+- alexanderte.dainty-vscode
+
+- asvetliakov.vscode-neovim
+
 - Cardinal90.multi-cursor-case-preserve
 
-- drfrost.strokey
-
 - eamodio.gitlens
-
-- Equinusocio.moxer-icons
 
 - esbenp.prettier-vscode
 
 - fayras.simple-new-file
 
-- jbockle.jbockle-format-files
-
-- JoeBerria.statusbarerror
-
-- kamikillerto.vscode-colorize
+- geddski.macros
 
 - LeonardSSH.vscord
 
 - llvm-vs-code-extensions.vscode-clangd
 
-- Luis.console-log
-
 - MartyBeGood.single-editor-tabs
+
+- melishev.feather-vscode
 
 - ms-dotnettools.csharp
 
-- pnp.polacode
+- ms-python.python
 
-- saeed-nazari.sn-theme
+- ms-python.vscode-pylance
 
-- sndst00m.starfall-visual-studio-code
+- ms-vscode.cpptools
 
-- softwaredotcom.swdc-vscode
-
-- southclaws.vscode-pawn
-
-- svelte.svelte-vscode
-
-- vscodevim.vim
-
-- wayou.vscode-todo-highlight
+- slavjuan.kinda-minimal-theme-vscode
