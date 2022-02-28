@@ -1,112 +1,131 @@
 {
-    "editor.fontFamily": "TamzenForPowerline, monospace",
-    "editor.fontSize": 18,
-    "editor.fontLigatures": true,
-    "editor.renderControlCharacters": true,
-    "editor.renderWhitespace": "trailing",
-    "editor.cursorSurroundingLines": 10,
-    "editor.minimap.enabled": false,
-    "editor.renderLineHighlight": "none",
-    "editor.overviewRulerBorder": false,
-    "editor.hideCursorInOverviewRuler": true,
-    "editor.renderFinalNewline": true,
-    "editor.guides.indentation": false,
-    "editor.showFoldingControls": "always",
-    "editor.glyphMargin": true,
-    "editor.cursorBlinking": "solid",
-    "editor.cursorSurroundingLinesStyle": "default",
-    "editor.unicodeHighlight.invisibleCharacters": true,
-    "editor.roundedSelection": true,
-    "editor.wordWrapColumn": 100,
-    "editor.wrappingStrategy": "simple",
-    "editor.wrappingIndent": "same",
-    "editor.wordWrap": "on",
-    "editor.scrollbar.vertical": "hidden",
-    "editor.scrollbar.horizontal": "hidden",
-    "editor.formatOnSave": true,
+  "editor.fontFamily": "Iosevka Mayukai Serif",
+  "editor.fontSize": 16,
+  "editor.fontLigatures": true,
+  "editor.renderControlCharacters": true,
+  "editor.renderWhitespace": "trailing",
+  "editor.cursorSurroundingLines": 10,
+  "editor.minimap.enabled": false,
+  "editor.renderLineHighlight": "none",
+  "editor.overviewRulerBorder": false,
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.renderFinalNewline": true,
+  "editor.guides.indentation": false,
+  "editor.showFoldingControls": "always",
+  "editor.glyphMargin": true,
+  "editor.cursorBlinking": "solid",
+  "editor.cursorSurroundingLinesStyle": "default",
+  "editor.unicodeHighlight.invisibleCharacters": true,
+  "editor.roundedSelection": true,
+  "editor.wordWrapColumn": 100,
+  "editor.wrappingStrategy": "simple",
+  "editor.wrappingIndent": "same",
+  "editor.wordWrap": "on",
+  "editor.lineNumbers": "relative",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.formatOnSave": true,
+  "editor.scrollBeyondLastLine": false,
 
-    "files.insertFinalNewline": true,
-    
-    "terminal.integrated.fontFamily": "TamzenForPowerline",
-    "terminal.integrated.fontSize": 18,
-    "terminal.integrated.drawBoldTextInBrightColors": false,
-    "terminal.integrated.tabs.enabled": false,
-    "terminal.integrated.profiles.windows": {
-        "PowerShell": {
-            "source": "PowerShell",
-            "icon": "terminal-powershell",
-            "args": ["/nologo"]
-        }
-    },
+  "files.insertFinalNewline": true,
 
-    "explorer.openEditors.visible": 0,
+  "terminal.integrated.fontFamily": "Iosevka Mayukai Serif",
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontWeight": 600,
+  "terminal.integrated.drawBoldTextInBrightColors": false,
+  "terminal.integrated.gpuAcceleration": "off",
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell",
+      "args": ["/nologo"]
+    }
+  },
 
-    "workbench.editor.showTabs": false,
-    "workbench.editor.highlightModifiedTabs": true,
-    "workbench.editor.tabCloseButton": "off",
-    "workbench.activityBar.visible": false,
-    "workbench.iconTheme": "origamid-next-icons",
-    "workbench.colorCustomizations": {
-        "statusBar.background": "#C3A6F1",
-        "statusBar.noFolderBackground": "#C3A6F1",
-        "statusBar.debuggingBackground": "#C3A6F1",
-        "statusBar.foreground": "#1F2430",
-        "statusBar.debuggingForeground": "#1F2430"
-    },
+  "explorer.openEditors.visible": 0,
 
-    "window.menuBarVisibility": "toggle",
-    "window.enableMenuBarMnemonics": false,
-    "window.autoDetectColorScheme": true,
-    "window.titleSeparator": " ➖ ",
+  "workbench.editor.showTabs": false,
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.tabCloseButton": "off",
+  "workbench.activityBar.visible": false,
+  "workbench.iconTheme": "origamid-next-icons",
+  "workbench.colorCustomizations": {
+    "[*]": {
+      "statusBar.background": "#DDDDDD",
+      "statusBar.noFolderBackground": "#DDDDDD",
+      "statusBar.debuggingBackground": "#DDDDDD",
+      "statusBar.foreground": "#000000",
+      "statusBar.debuggingForeground": "#000000"
+    },
+    "[Kinda Minimal]": {
+      "statusBar.background": "#2C2D2F",
+      "statusBar.noFolderBackground": "#2C2D2F",
+      "statusBar.debuggingBackground": "#2C2D2F",
+      "statusBar.foreground": "#DDDDDD",
+      "statusBar.debuggingForeground": "#DDDDDD"
+    }
+  },
 
-    "telemetry.telemetryLevel": "error",
+  "window.menuBarVisibility": "toggle",
+  "window.enableMenuBarMnemonics": false,
+  "window.autoDetectColorScheme": true,
+  "window.title": "${dirty}${activeEditorShort}${separator}${appName}",
 
-    "singleEditorTabs.saveBehaviour": "ask",
+  "telemetry.telemetryLevel": "error",
 
-    "[svelte]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "svelte.enable-ts-plugin": true,
+  "singleEditorTabs.saveBehaviour": "ask",
 
-    "vscode-neovim.neovimExecutablePaths.win32": "nvim",
-    
-    "macros": {
-        "fixEscape": [
-            "vscode-neovim.escape",
-            "editor.action.cancelSelectionAnchor",
-            "cancelSelection"
-        ]
-    },
+  "[svelte]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "svelte.enable-ts-plugin": true,
 
-    "gitlens.hovers.currentLine.details": false,
-    "gitlens.hovers.currentLine.over": "line",
+  "vscode-neovim.neovimExecutablePaths.win32": "nvim",
+  "vscode-neovim.useCtrlKeysForNormalMode": false,
+  "vscode-neovim.useCtrlKeysForInsertMode": false,
+  "vscode-neovim.neovimInitVimPaths.win32": "C:/Users/duyda/AppData/Local/nvim/init.vim",
 
-    "omnisharp.useModernNet": true,
-    "omnisharp.enableAsyncCompletion": true,
-    "omnisharp.autoStart": false,
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[css]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[scss]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "files.associations": {
-        "*.rml": "html",
-        "*.rcss": "css"
-    },
-    "workbench.colorTheme": "Monochrome",
-    "workbench.productIconTheme": "feather-vscode",
-    "window.zoomLevel": 0
+  "macros": {
+    "fixEscape": [
+      "vscode-neovim.escape",
+      "editor.action.cancelSelectionAnchor",
+      "cancelSelection"
+    ]
+  },
+
+  "gitlens.hovers.currentLine.details": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "terminal.integrated.tabs.enabled": false,
+  // "clangd.arguments": [
+  //     "--compile-commands-dir=${workspaceFolder}/.clangd"
+  // ]
+
+  "omnisharp.useModernNet": true,
+  "omnisharp.enableAsyncCompletion": true,
+  "omnisharp.autoStart": false,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.associations": {
+    "*.rml": "html",
+    "*.rcss": "css"
+  },
+  "workbench.productIconTheme": "feather-vscode",
+  "workbench.colorTheme": "Kinda Minimal",
+  "window.zoomLevel": 1
 }
