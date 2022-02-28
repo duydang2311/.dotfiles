@@ -1,24 +1,25 @@
+
 // Place your key bindings in this file to override the defaults
 [
     {
+        "key": "ctrl+w",
+        "command": "-workbench.action.closeActiveEditor",
+    },
+    {
         "key": "ctrl+w h",
         "command": "workbench.action.navigateLeft",
-        "when": "!editorFocus"
     },
     {
         "key": "ctrl+w l",
         "command": "workbench.action.navigateRight",
-        "when": "!editorFocus"
     },
     {
         "key": "ctrl+w k",
         "command": "workbench.action.navigateUp",
-        "when": "!editorFocus"
     },
     {
         "key": "ctrl+w j",
         "command": "workbench.action.navigateDown",
-        "when": "!editorFocus"
     },
     {
         "key": "ctrl+t",
@@ -51,6 +52,11 @@
         "when": "neovim.mode == normal && editorTextFocus",
     },
     {
+        "key": "\\ d",
+        "command": "editor.action.revealDefinition",
+        "when": "editorTextFocus && neovim.mode != insert",
+    },
+    {
         "key": "j",
         "command": "vscode-neovim.compositeEscape1",
         "when": "neovim.mode == insert && editorTextFocus",
@@ -75,7 +81,7 @@
     {
         "key": "d",
         "command": "deleteLeft",
-        "when": "editorHasMultipleSelections"
+        "when": "editorHasSelection && neovim.mode != insert"
     },
     {
         "key": "shift+k",
@@ -84,45 +90,14 @@
     },
     {
         "key": "ctrl+d",
-        "command": "cursorMove",
-        "when": "editorTextFocus",
-        "args": {
-            "to": "down",
-            "by": "halfLine",
-            "value": 4,
-        }
-    },
-    {
-        "key": "ctrl+d",
-        "command": "cursorMove",
-        "when": "neovim.mode == visual && editorTextFocus",
-        "args": {
-            "to": "down",
-            "by": "halfLine",
-            "value": 4,
-            "select": true,
-        }
+        "command": "vscode-neovim.send",
+        "args": "jjjj"
     },
     {
         "key": "ctrl+u",
-        "command": "cursorMove",
-        "when": "editorTextFocus",
-        "args": {
-            "to": "up",
-            "by": "halfLine",
-            "value": 4,
-        }
-    },
-    {
-        "key": "ctrl+u",
-        "command": "cursorMove",
-        "when": "neovim.mode == visual && editorTextFocus",
-        "args": {
-            "to": "up",
-            "by": "halfLine",
-            "value": 4,
-            "select": true,
-        }
+        "command": "vscode-neovim.send",
+        "args": "kkkk",
+        "when": "editorTextFocus && neovim.mode != insert"
     },
     {
         "key": "ctrl+p",
@@ -132,6 +107,6 @@
     {
         "key": "ctrl+p",
         "command": "-list.focusUp",
-        "when": "inReferenceSearchEditor && neovim.mode == 'normal'"
-    }
+        "when": "inReferenceSearchEditor && neovim.mode == normal"
+    },
 ]
