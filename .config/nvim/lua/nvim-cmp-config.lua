@@ -3,12 +3,12 @@ local cmp = require'cmp'
 cmp.setup({
 	snippet = {
 		expand = function(args)
-			vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+			vim.fn["vsnip#anonymous"](args.body)
 		end,
 	},
 	window = {
 		-- completion = cmp.config.window.bordered(),
-		documentation = cmp.config.window.bordered(),
+		-- documentation = cmp.config.window.bordered(),
 	},
 	mapping = cmp.mapping.preset.insert({
 		['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -22,7 +22,18 @@ cmp.setup({
 		{ name = 'vsnip' },
 	}, {
 		{ name = 'buffer' },
-	})
+
+	}),
+	formatting = {
+		format = require'lspkind'.cmp_format({
+			mode = 'symbol',
+			maxwidth = 50,
+			ellipsis_char = '...',
+			before = function (entry, vim_item)
+				return vim_item
+			end
+		})
+	}
 })
 
 cmp.setup.filetype('gitcommit', {
@@ -50,8 +61,30 @@ cmp.setup.cmdline(':', {
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require('lspconfig')
-
 local opts = { noremap=true, silent=false }
+
+vim.diagnostic.config({
+	virtual_text = false,
+	float = {
+		source = "if_many"
+	},
+	signs = false,
+	underline = true,
+	update_in_insert = true,
+	severity_sort = true
+})
+
+vim.cmd [[
+  highlight! DiagnosticLineNrError guibg=#51202A guifg=#FF0000 gui=bold
+  highlight! DiagnosticLineNrWarn guibg=#51412A guifg=#FFA500 gui=bold
+  highlight! DiagnosticLineNrInfo guibg=#1E535D guifg=#00FFFF gui=bold
+  highlight! DiagnosticLineNrHint guibg=#1E205D guifg=#0000FF gui=bold
+
+  sign define DiagnosticSignError text= texthl=DiagnosticSignError linehl= numhl=DiagnosticLineNrError
+  sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarn linehl= numhl=DiagnosticLineNrWarn
+  sign define DiagnosticSignInfo text= texthl=DiagnosticSignInfo linehl= numhl=DiagnosticLineNrInfo
+  sign define DiagnosticSignHint text= texthl=DiagnosticSignHint linehl= numhl=DiagnosticLineNrHint
+]]
 
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
@@ -64,7 +97,7 @@ local on_attach = function(client, bufnr)
   local bufopts = { noremap=true, silent=false, buffer=bufnr }
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-  vim.keymap.set('n', '<space>e', vim.lsp.buf.hover, bufopts)
+  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
   vim.keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, bufopts)
   vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
@@ -101,3 +134,9 @@ lspconfig['omnisharp'].setup {
     sdk_include_prereleases = false,
     analyze_open_documents_only = true,
 }
+
+lspconfig['pyright'].setup {
+	capabilities = capabilities,
+	on_attach = on_attach
+}
+

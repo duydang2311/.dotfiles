@@ -16,6 +16,8 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
+Plug 'folke/trouble.nvim'
+Plug 'onsails/lspkind.nvim'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -34,17 +36,22 @@ Plug 'f-person/git-blame.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 
-Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
+Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvim-tree/nvim-tree.lua'
+
+Plug 'mg979/vim-visual-multi'
+Plug 'voldikss/vim-floaterm'
 
 call plug#end()
 
 so ~/.config/nvim/settings.vim
+so ~/.config/nvim/maps.vim
 so ~/.config/nvim/git-blame.vim
 
 lua require('nvim-cmp-config')
 lua require('lualine-config')
 lua require('nvim-tree-config')
+lua require('trouble-config')
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
