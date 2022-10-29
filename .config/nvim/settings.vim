@@ -43,6 +43,8 @@ set noignorecase
 set smartcase
 set updatetime=100
 
+let g:solarized_termtrans = 1
+
 set background=dark
 colorscheme solarized8_flat
 

@@ -41,6 +41,8 @@ Plug 'nvim-tree/nvim-tree.lua'
 
 Plug 'mg979/vim-visual-multi'
 Plug 'voldikss/vim-floaterm'
+Plug 'xiyaowong/nvim-transparent'
+Plug 'akinsho/bufferline.nvim'
 
 call plug#end()
 
@@ -52,6 +54,9 @@ lua require('nvim-cmp-config')
 lua require('lualine-config')
 lua require('nvim-tree-config')
 lua require('trouble-config')
+lua require('transparent-config')
+lua require('bufferline-config')
+lua require('nvim-autopairs-config')
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
