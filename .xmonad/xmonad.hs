@@ -13,8 +13,10 @@ import XMonad.Util.Ungrab
 import XMonad.Layout.Magnifier
 import XMonad.Layout.ThreeColumns
 import XMonad.Layout.Spacing
+import XMonad.Layout.Tabbed
 
 import XMonad.Hooks.EwmhDesktops
+import XMonad.Hooks.FadeWindows
 
 
 main :: IO ()
@@ -28,16 +30,26 @@ myConfig = def
     { modMask    = mod4Mask      -- Rebind Mod to the Super key
     , layoutHook = myLayout      -- Use custom layouts
     , manageHook = myManageHook  -- Match on certain windows
+	, logHook = fadeWindowsLogHook myFadeHook
+	, handleEventHook = fadeWindowsEventHook
     , terminal = "alacritty"
     , normalBorderColor = "#073642"
     , focusedBorderColor = "#268bd2"
     }
   `additionalKeysP`
-    [ ("M-S-z", spawn "xscreensaver-command -lock")
-    , ("M-C-s", unGrab *> spawn "scrot -s"        )
-    , ("M-f"  , spawn "qutebrowser"               )
-    , ("M-t"  , spawn "alacritty"                 )
+    [ ("M-S-z", spawn "xscreensaver-command -lock"										   )
+    , ("M-C-s", unGrab *> spawn "scrot -s"												   )
+    , ("M-f"  , spawn "brave"															   )
+	, ("<Print>", unGrab *> spawn "maim -m 9 | xclip -selection clipboard -t image/png -i" )
+	, ("C-<Print>", spawn "maim -s -m 9 | xclip -selection clipboard -t image/png -i"      )
+	, ("<XF86MonBrightnessUp>", spawn "xbacklight -inc 5"                                  )
+	, ("<XF86MonBrightnessDown>", spawn "xbacklight -dec 5"                                )
     ]
+
+myFadeHook = composeAll [
+	opaque
+  , isUnfocused --> opacity 0.9
+  ]
 
 myManageHook :: ManageHook
 myManageHook = composeAll
@@ -45,8 +57,19 @@ myManageHook = composeAll
     , isDialog            --> doFloat
     ]
 
-myLayout = spacingRaw False (Border 0 6 6 6) True (Border 6 6 6 6) True
-         $ tiled ||| Mirror tiled ||| Full ||| threeCol
+myTabConfig = def { inactiveBorderColor = "#073642"
+				  , inactiveBorderWidth = 0
+				  , activeBorderWidth = 2
+				  , inactiveTextColor = "#657b83"
+				  , activeTextColor = "#93a1a1"
+				  , activeBorderColor = "#073642"
+				  , fontName = "xft:Mononoki Nerd Font:size=13:weight=bold:antialias=true:hinting=true"
+				  , inactiveColor = "#073642"
+				  , activeColor = "#002b36"
+				  , decoHeight = 24 }
+
+myLayout = spacingRaw False (Border 6 6 6 6) True (Border 6 6 6 6) True
+         $ tiled ||| Mirror tiled ||| Full ||| threeCol ||| tabbed shrinkText myTabConfig
   where
     threeCol = magnifiercz' 1.3 $ ThreeColMid nmaster delta ratio
     tiled    = Tall nmaster delta ratio
