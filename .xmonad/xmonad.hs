@@ -44,6 +44,7 @@ myConfig = def
     , ("C-<Print>", spawn "maim -s -m 9 | xclip -selection clipboard -t image/png -i"      )
     , ("<XF86MonBrightnessUp>", spawn "xbacklight -inc 5"                                  )
     , ("<XF86MonBrightnessDown>", spawn "xbacklight -dec 5"                                )
+	, ("M-p", spawn "rofi -show combi"                                                     )
     ]
 
 myFadeHook = composeAll [
