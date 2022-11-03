@@ -30,24 +30,24 @@ myConfig = def
     { modMask    = mod4Mask      -- Rebind Mod to the Super key
     , layoutHook = myLayout      -- Use custom layouts
     , manageHook = myManageHook  -- Match on certain windows
-	, logHook = fadeWindowsLogHook myFadeHook
-	, handleEventHook = fadeWindowsEventHook
+    , logHook = fadeWindowsLogHook myFadeHook
+    , handleEventHook = fadeWindowsEventHook
     , terminal = "alacritty"
     , normalBorderColor = "#073642"
     , focusedBorderColor = "#268bd2"
     }
   `additionalKeysP`
-    [ ("M-S-z", spawn "xscreensaver-command -lock"										   )
-    , ("M-C-s", unGrab *> spawn "scrot -s"												   )
-    , ("M-f"  , spawn "brave"															   )
-	, ("<Print>", unGrab *> spawn "maim -m 9 | xclip -selection clipboard -t image/png -i" )
-	, ("C-<Print>", spawn "maim -s -m 9 | xclip -selection clipboard -t image/png -i"      )
-	, ("<XF86MonBrightnessUp>", spawn "xbacklight -inc 5"                                  )
-	, ("<XF86MonBrightnessDown>", spawn "xbacklight -dec 5"                                )
+    [ ("M-S-z", spawn "xscreensaver-command -lock"                                         )
+    , ("M-C-s", unGrab *> spawn "scrot -s"                                                 )
+    , ("M-f"  , spawn "brave"                                                              )
+    , ("<Print>", unGrab *> spawn "maim -m 9 | xclip -selection clipboard -t image/png -i" )
+    , ("C-<Print>", spawn "maim -s -m 9 | xclip -selection clipboard -t image/png -i"      )
+    , ("<XF86MonBrightnessUp>", spawn "xbacklight -inc 5"                                  )
+    , ("<XF86MonBrightnessDown>", spawn "xbacklight -dec 5"                                )
     ]
 
 myFadeHook = composeAll [
-	opaque
+    opaque
   , isUnfocused --> opacity 0.9
   ]
 
@@ -58,15 +58,15 @@ myManageHook = composeAll
     ]
 
 myTabConfig = def { inactiveBorderColor = "#073642"
-				  , inactiveBorderWidth = 0
-				  , activeBorderWidth = 2
-				  , inactiveTextColor = "#657b83"
-				  , activeTextColor = "#93a1a1"
-				  , activeBorderColor = "#073642"
-				  , fontName = "xft:Mononoki Nerd Font:size=12:weight=bold:antialias=true:hinting=true"
-				  , inactiveColor = "#073642"
-				  , activeColor = "#002b36"
-				  , decoHeight = 24 }
+                  , inactiveBorderWidth = 0
+                  , activeBorderWidth = 2
+                  , inactiveTextColor = "#657b83"
+                  , activeTextColor = "#93a1a1"
+                  , activeBorderColor = "#073642"
+                  , fontName = "xft:Mononoki Nerd Font:size=12:weight=bold:antialias=true:hinting=true"
+                  , inactiveColor = "#073642"
+                  , activeColor = "#002b36"
+                  , decoHeight = 24 }
 
 myLayout = spacingRaw False (Border 6 6 6 6) True (Border 6 6 6 6) True
          $ tiled ||| Mirror tiled ||| Full ||| threeCol ||| tabbed shrinkText myTabConfig
