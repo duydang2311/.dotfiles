@@ -26,8 +26,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-commentary'
 Plug 'windwp/nvim-autopairs'
 
-Plug 'mhinz/vim-startify'
-
 Plug 'lifepillar/vim-solarized8'
 
 Plug 'airblade/vim-gitgutter'
@@ -44,11 +42,27 @@ Plug 'voldikss/vim-floaterm'
 Plug 'xiyaowong/nvim-transparent'
 Plug 'akinsho/bufferline.nvim'
 
+" Plug '~/programming/gh-status.nvim'
+Plug 'duydang2311/gh-status.nvim'
+
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'evanleck/vim-svelte'
+
+Plug 'echasnovski/mini.starter'
+
+" Plug 'brenoprata10/nvim-highlight-colors'
+" Plug 'folke/twilight.nvim'
+
+Plug 'lewis6991/impatient.nvim'
+
 call plug#end()
 
-so ~/.config/nvim/settings.vim
+lua require('impatient-config')
+
 so ~/.config/nvim/maps.vim
 so ~/.config/nvim/git-blame.vim
+so ~/.config/nvim/settings.vim
 
 lua require('nvim-cmp-config')
 lua require('lualine-config')
@@ -57,6 +71,10 @@ lua require('trouble-config')
 lua require('transparent-config')
 lua require('bufferline-config')
 lua require('nvim-autopairs-config')
+lua require('gh-status-config')
+lua require('mini-starter-config')
+" lua require('nvim-highlight-colors-config')
+" lua require('twilight-config')
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |

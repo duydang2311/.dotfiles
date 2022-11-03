@@ -33,7 +33,7 @@ set autoread
 set backspace=indent,eol,start
 set nomodeline
 set noshowmode
-set scrolloff=5
+set scrolloff=4
 set scroll=4
 set sidescroll=1
 set sidescrolloff=7
@@ -44,6 +44,8 @@ set smartcase
 set updatetime=100
 
 let g:solarized_termtrans = 1
+
+let g:svelte_preprocessors = ['typescript']
 
 set background=dark
 colorscheme solarized8_flat
