@@ -63,7 +63,7 @@ myTabConfig = def { inactiveBorderColor = "#073642"
 				  , inactiveTextColor = "#657b83"
 				  , activeTextColor = "#93a1a1"
 				  , activeBorderColor = "#073642"
-				  , fontName = "xft:Mononoki Nerd Font:size=13:weight=bold:antialias=true:hinting=true"
+				  , fontName = "xft:Mononoki Nerd Font:size=12:weight=bold:antialias=true:hinting=true"
 				  , inactiveColor = "#073642"
 				  , activeColor = "#002b36"
 				  , decoHeight = 24 }
