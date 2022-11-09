@@ -1,9 +1,9 @@
 @theme "solarized"
 
 configuration {
-	modi: "window,drun,ssh,combi";
+	modi: "window,run,ssh,combi";
 	font: "UbuntuMono Nerd Font 18";
-	combi-modi: "window,drun,ssh";
+	combi-modi: "window,run,ssh";
 	icon-theme: "Papirus";
 	show-icons: true;
 }
