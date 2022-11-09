@@ -55,15 +55,23 @@ Plug 'echasnovski/mini.starter'
 " Plug 'folke/twilight.nvim'
 
 Plug 'lewis6991/impatient.nvim'
+Plug 'declancm/cinnamon.nvim'
+
+Plug 'lervag/vimtex'
 
 call plug#end()
 
-lua require('impatient-config')
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
 
 so ~/.config/nvim/maps.vim
 so ~/.config/nvim/git-blame.vim
 so ~/.config/nvim/settings.vim
 
+lua require('impatient-config')
 lua require('nvim-cmp-config')
 lua require('lualine-config')
 lua require('nvim-tree-config')
@@ -75,7 +83,5 @@ lua require('gh-status-config')
 lua require('mini-starter-config')
 " lua require('nvim-highlight-colors-config')
 " lua require('twilight-config')
+lua require('cinnamon-config')
 
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
-    \ execute 'cd '.argv()[0] | endif

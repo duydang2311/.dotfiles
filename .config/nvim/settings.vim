@@ -33,15 +33,16 @@ set autoread
 set backspace=indent,eol,start
 set nomodeline
 set noshowmode
-set scrolloff=4
-set scroll=4
-set sidescroll=1
-set sidescrolloff=7
 set noerrorbells
 set visualbell
 set noignorecase
 set smartcase
 set updatetime=100
+set scrolloff=4
+set sidescroll=1
+set sidescrolloff=7
+
+autocmd WinScrolled * set scroll=4
 
 let g:solarized_termtrans = 1
 
@@ -49,4 +50,8 @@ let g:svelte_preprocessors = ['typescript']
 
 set background=dark
 colorscheme solarized8_flat
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
+    \ execute 'cd '.argv()[0] | endif
 

@@ -22,7 +22,6 @@ cmp.setup({
 		{ name = 'vsnip' },
 	}, {
 		{ name = 'buffer' },
-
 	}),
 	formatting = {
 		format = require'lspkind'.cmp_format({
@@ -158,3 +157,27 @@ lspconfig['sumneko_lua'].setup {
 	}
 }
 
+lspconfig['svelte'].setup {
+	capabilities = capabilities,
+	on_attach = on_attach,
+	settings = {
+		Lua = {
+			runtime = { version = 'LuaJIT' },
+			diagnostics = { globals = { 'vim' }},
+			workspace = { library = vim.api.nvim_get_runtime_file("", true) },
+			telemetry = { enable = false }
+		}
+	}
+}
+
+lspconfig['arduino_language_server'].setup {
+	capabilities = capabilities,
+	on_attach = on_attach,
+	cmd = {
+    "arduino-language-server",
+    "-cli-config", "~/.arduino15/arduino-cli.yaml",
+    "-fqbn", "arduino:avr:uno",
+    "-cli", "arduino-cli",
+    "-clangd", "clangd"
+  }
+}

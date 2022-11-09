@@ -10,13 +10,13 @@ tnoremap   <silent>   <F9>    <C-\><C-n>:FloatermNext<CR>
 nnoremap   <silent>   <F12>   :FloatermToggle<CR>
 tnoremap   <silent>   <F12>   <C-\><C-n>:FloatermToggle<CR>
 
-" nnoremap <silent><space>[ :BufferLineCyclePrev<CR>
-" nnoremap <silent><space>] :BufferLineCycleNext<CR>
+nnoremap <silent><space>[ :BufferLineCyclePrev<CR>
+nnoremap <silent><space>] :BufferLineCycleNext<CR>
 nnoremap <silent><space>p :BufferLinePick<CR>
 nnoremap <silent><space>d :BufferLinePickClose<CR>
 
-nnoremap <silent><space>[ :bprev<CR>
-nnoremap <silent><space>] :bnext<CR>
+" nnoremap <silent><space>[ :bprev<CR>
+" nnoremap <silent><space>] :bnext<CR>
 
 nnoremap <silent><Leader>1 :BufferLineGoToBuffer 1<CR>
 nnoremap <silent><Leader>2 :BufferLineGoToBuffer 2<CR>
