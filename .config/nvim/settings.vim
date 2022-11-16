@@ -41,8 +41,9 @@ set updatetime=100
 set scrolloff=4
 set sidescroll=1
 set sidescrolloff=7
+set scroll=4
 
-autocmd WinScrolled * set scroll=4
+" autocmd WinScrolled * set scroll=4
 
 let g:solarized_termtrans = 1
 
