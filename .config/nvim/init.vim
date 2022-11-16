@@ -17,7 +17,6 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'folke/trouble.nvim'
-Plug 'onsails/lspkind.nvim'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -58,6 +57,7 @@ Plug 'lewis6991/impatient.nvim'
 Plug 'declancm/cinnamon.nvim'
 
 Plug 'lervag/vimtex'
+Plug 'mileszs/ack.vim'
 
 call plug#end()
 
