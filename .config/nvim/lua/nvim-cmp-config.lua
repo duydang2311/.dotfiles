@@ -1,5 +1,33 @@
 local cmp = require'cmp'
 
+local cmp_kinds = {
+  Text = '  ',
+  Method = '  ',
+  Function = '  ',
+  Constructor = '  ',
+  Field = '  ',
+  Variable = '  ',
+  Class = '  ',
+  Interface = '  ',
+  Module = '  ',
+  Property = '  ',
+  Unit = '  ',
+  Value = '  ',
+  Enum = '  ',
+  Keyword = '  ',
+  Snippet = '  ',
+  Color = '  ',
+  File = '  ',
+  Reference = '  ',
+  Folder = '  ',
+  EnumMember = '  ',
+  Constant = '  ',
+  Struct = '  ',
+  Event = '  ',
+  Operator = '  ',
+  TypeParameter = '  ',
+}
+
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -24,14 +52,11 @@ cmp.setup({
 		{ name = 'buffer' },
 	}),
 	formatting = {
-		format = require'lspkind'.cmp_format({
-			mode = 'symbol',
-			maxwidth = 50,
-			ellipsis_char = '...',
-			before = function (entry, vim_item)
-				return vim_item
-			end
-		})
+		fields = { "kind", "abbr" },
+		format = function(_, vim_item)
+		  vim_item.kind = cmp_kinds[vim_item.kind] or ""
+		  return vim_item
+		end,
 	}
 })
 
@@ -181,3 +206,28 @@ lspconfig['arduino_language_server'].setup {
     "-clangd", "clangd"
   }
 }
+
+lspconfig['rust_analyzer'].setup {
+	capabilities = capabilities,
+	on_attach = on_attach,
+	settings = {
+        ["rust-analyzer"] = {
+            imports = {
+                granularity = {
+                    group = "module",
+                },
+                prefix = "self",
+            },
+            cargo = {
+                buildScripts = {
+                    enable = true,
+                },
+            },
+            procMacro = {
+                enable = true
+            },
+        }
+    }
+}
+
+lspconfig['astro'].setup {}
