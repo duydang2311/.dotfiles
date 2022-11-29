@@ -1,4 +1,6 @@
-require('bufferline').setup {
+local bufferline = require'bufferline'
+
+bufferline.setup {
 	options = {
 		mode = "buffers",
 		numbers = "ordinal",
@@ -58,3 +60,16 @@ require('bufferline').setup {
 		sort_by = 'insert_after_current'
 	}
 }
+
+vim.keymap.set('n', '<leader>bd', function()
+	for _, e in ipairs(bufferline.get_elements().elements) do
+		if e.id ~= vim.api.nvim_get_current_buf() then
+			vim.schedule(function()
+				vim.cmd("bd ".. e.id)
+			end)
+		end
+	end
+	vim.schedule(function()
+		vim.cmd("redrawtabline")
+	end)
+end, { noremap = true, silent = true })

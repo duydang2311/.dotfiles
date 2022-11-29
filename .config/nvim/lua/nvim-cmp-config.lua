@@ -43,7 +43,7 @@ cmp.setup({
 		['<C-f>'] = cmp.mapping.scroll_docs(4),
 		['<C-Space>'] = cmp.mapping.complete(),
 		['<C-e>'] = cmp.mapping.abort(),
-		['<CR>'] = cmp.mapping.confirm({ select = false }),
+		['<CR>'] = cmp.mapping.confirm({ select = true }),
 	}),
 	sources = cmp.config.sources({
 		{ name = 'nvim_lsp' },
@@ -86,6 +86,8 @@ cmp.setup.cmdline(':', {
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require('lspconfig')
 local opts = { noremap=true, silent=false }
+
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 vim.diagnostic.config({
 	virtual_text = false,
@@ -230,4 +232,24 @@ lspconfig['rust_analyzer'].setup {
     }
 }
 
-lspconfig['astro'].setup {}
+lspconfig['astro'].setup {
+	capabilities = capabilities,
+	on_attach = on_attach,
+}
+
+lspconfig['html'].setup {
+	capabilities = capabilities,
+	on_attach = on_attach,
+	filetypes = { "html", "jsp" }
+}
+
+lspconfig['tailwindcss'].setup {
+	capabilities = capabilities,
+	on_attach = on_attach,
+	filetypes = { "aspnetcorerazor", "astro", "astro-markdown", "blade", "django-html", "htmldjango", "edge", "eelixir", "elixir", "ejs", "erb", "eruby", "gohtml", "haml", "handlebars", "hbs", "html", "html-eex", "heex", "jade", "leaf", "liquid", "markdown", "mdx", "mustache", "njk", "nunjucks", "php", "razor", "slim", "twig", "css", "less", "postcss", "sass", "scss", "stylus", "sugarss", "javascript", "javascriptreact", "reason", "rescript", "typescript", "typescriptreact", "vue", "svelte", "jsp" }
+}
+
+lspconfig['clangd'].setup {
+	capabilities = capabilities,
+	on_attach = on_attach,
+}

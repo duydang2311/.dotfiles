@@ -50,14 +50,12 @@ Plug 'evanleck/vim-svelte'
 
 Plug 'echasnovski/mini.starter'
 
-" Plug 'brenoprata10/nvim-highlight-colors'
-" Plug 'folke/twilight.nvim'
-
 Plug 'lewis6991/impatient.nvim'
-Plug 'declancm/cinnamon.nvim'
 
 Plug 'lervag/vimtex'
 Plug 'mileszs/ack.vim'
+Plug 'chxuan/vim-buffer'
+Plug 'karb94/neoscroll.nvim'
 
 call plug#end()
 
@@ -81,7 +79,4 @@ lua require('bufferline-config')
 lua require('nvim-autopairs-config')
 lua require('gh-status-config')
 lua require('mini-starter-config')
-" lua require('nvim-highlight-colors-config')
-" lua require('twilight-config')
-lua require('cinnamon-config')
-
+lua require('neoscroll-config')
