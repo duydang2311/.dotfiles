@@ -1,6 +1,18 @@
-
-// Place your key bindings in this file to override the defaults
 [
+    {
+        "key": "ctrl+t",
+        "command": "-workbench.action.showAllSymbols"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "workbench.files.action.focusFilesExplorer",
+        "when": "!explorerViewletVisible"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.closeSidebar",
+        "when": "explorerViewletVisible"
+    },
     {
         "key": "ctrl+w",
         "command": "-workbench.action.closeActiveEditor",
@@ -22,91 +34,43 @@
         "command": "workbench.action.navigateDown",
     },
     {
-        "key": "ctrl+t",
-        "command": "workbench.files.action.focusFilesExplorer",
-        "when": "!explorerViewletVisible"
-    },
-    {
-        "key": "ctrl+t",
-        "command": "workbench.action.closeSidebar",
-        "when": "explorerViewletVisible"
-    },
-    {
         "key": "ctrl+n",
         "command": "editor.action.addSelectionToNextFindMatch",
         "when": "textInputFocus && !suggestWidgetVisible"
     },
     {
-        "key": "g s",
-        "command": "editor.action.showHover",
-        "when": "neovim.mode == normal && editorTextFocus"
+        "key": "ctrl+p",
+        "command": "-extension.vim_ctrl+p",
+        "when": "editorTextFocus && vim.active && vim.use<C-p> && !inDebugRepl || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
     },
     {
-        "key": "g g",
-        "command": "cursorTop",
-        "when": "neovim.mode == normal && editorTextFocus"
+        "key": "ctrl+w",
+        "command": "-extension.vim_ctrl+w",
+        "when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl"
     },
     {
-        "key": "shift+g",
-        "command": "cursorBottom",
-        "when": "neovim.mode == normal && editorTextFocus",
+        "key": "ctrl+w q",
+        "command": "workbench.action.closeActiveEditor",
+        "when": "editorFocus"
     },
     {
-        "key": "\\ d",
-        "command": "editor.action.revealDefinition",
-        "when": "editorTextFocus && neovim.mode != insert",
-    },
-    {
-        "key": "j",
-        "command": "vscode-neovim.compositeEscape1",
-        "when": "neovim.mode == insert && editorTextFocus",
-        "args": "j"
-    },
-    {
-        "key": "k",
-        "command": "vscode-neovim.compositeEscape2",
-        "when": "neovim.mode == insert && editorTextFocus",
-        "args": "k"
-    },
-    {
-        "key": "Escape",
-        "command": "macros.fixEscape",
-        "when": "neovim.mode == visual && editorHasSelection && editorTextFocus",
+        "key": "ctrl+w",
+        "command": "-workbench.action.closeGroup",
+        "when": "activeEditorGroupEmpty && multipleEditorGroups"
     },
     {
         "key": "ctrl+k",
-        "command": "editor.action.triggerParameterHints",
-        "when": "neovim.mode == insert && editorTextFocus"
+        "command": "-extension.vim_ctrl+k",
+        "when": "editorTextFocus && vim.active && vim.use<C-k> && !inDebugRepl"
     },
     {
-        "key": "d",
-        "command": "deleteLeft",
-        "when": "editorHasSelection && neovim.mode != insert"
+        "key": "ctrl+k ctrl+i",
+        "command": "-editor.action.showHover",
+        "when": "editorTextFocus"
     },
     {
-        "key": "shift+k",
-        "command": "editor.action.triggerParameterHints",
-        "when": "neovim.mode == normal && editorTextFocus"
-    },
-    {
-        "key": "ctrl+d",
-        "command": "vscode-neovim.send",
-        "args": "jjjj"
-    },
-    {
-        "key": "ctrl+u",
-        "command": "vscode-neovim.send",
-        "args": "kkkk",
-        "when": "editorTextFocus && neovim.mode != insert"
-    },
-    {
-        "key": "ctrl+p",
-        "command": "-list.focusUp",
-        "when": "listFocus && !inputFocus"
-    },
-    {
-        "key": "ctrl+p",
-        "command": "-list.focusUp",
-        "when": "inReferenceSearchEditor && neovim.mode == normal"
+        "key": "ctrl+i",
+        "command": "editor.action.showHover",
+        "when": "editorTextFocus"
     },
 ]
