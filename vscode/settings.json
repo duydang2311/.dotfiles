@@ -13,13 +13,20 @@
     "editor.cursorSmoothCaretAnimation": "explicit",
     "editor.bracketPairColorization.enabled": false,
     "editor.codeLens": false,
+    "editor.scrollbar.verticalScrollbarSize": 6,
+    "editor.lineNumbers": "relative",
+    "editor.renderLineHighlight": "none",
+    "editor.acceptSuggestionOnCommitCharacter": false,
+
+    "explorer.compactFolders": false,
     
-    "workbench.colorTheme": "Maron Theme: Solarized Planets Classic",
+    "workbench.colorTheme": "Maron Theme: Solarized Planets",
     "workbench.panel.showLabels": false,
     "workbench.activityBar.location": "hidden",
-    "workbench.sideBar.location": "right",
     "workbench.layoutControl.enabled": false,
     "workbench.editor.showTabs": "single",
+    "workbench.tree.indent": 16,
+    "workbench.sideBar.location": "right",
 
     "terminal.integrated.profiles.windows": {
         "pwsh": {
@@ -33,10 +40,13 @@
     },
     "terminal.integrated.defaultProfile.windows": "nu",
 
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1
+    },
+
     "vim.useSystemClipboard": true,
     "vim.highlightedyank.color": "rgba(255,255,255,0.1)",
     "vim.highlightedyank.enable": true,
-    "vim.scroll": 6,
 
     "git.blame.editorDecoration.enabled": true,
     "svelte.enable-ts-plugin": true,
@@ -51,6 +61,21 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[jsonc]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     }
 }
