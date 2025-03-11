@@ -17,20 +17,32 @@
 # You can remove these comments if you want or leave
 # them for future reference.
 
-source ./fnm.nu
+source ~/.config/nu/fnm.nu
 
 $env.config.buffer_editor = 'nvim'
 $env.config.show_banner = false
 $env.config.table.mode = 'light'
 
 $env.PROMPT_COMMAND = { ||
-    let cwd = $"(ansi blue)($env.PWD | path basename)"
+    mut cwd = $"(ansi blue)($env.PWD | path basename)"
+    mut git = ""
+    
     let branch = do { git branch --show-current } | complete
-    let git = if $branch.exit_code == 0 and ($branch.stdout | is-not-empty) {
-        $"(ansi white)\(\u{eafe} ($branch.stdout | str trim)\)(ansi reset)"
-    } else {
-        ""
+    if $branch.exit_code == 0 and ($branch.stdout | is-not-empty) {
+        $git = $"(ansi white)\(\u{eafe} ($branch.stdout | str trim)\)(ansi reset)"
+        let root = do { git rev-parse --show-toplevel } | complete
+        if $root.exit_code == 0 and ($root.stdout | is-not-empty) {
+            $cwd = if ($root.stdout | path expand | str trim) == $env.PWD { 
+                $root.stdout | path basename | str trim
+            } else {
+                [
+                    ($root.stdout | path basename | str trim)
+                    ($env.PWD | path relative-to ($root.stdout | str trim | path expand))
+                ] | path join
+            }
+        }
     }
+    
     [ $cwd $git (char nl) ] | filter {|x| $x | is-not-empty } | str join " "
 }
 
