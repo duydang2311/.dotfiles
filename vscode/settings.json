@@ -1,81 +1,85 @@
 {
-    "window.zoomLevel": -0.5,
-    "window.menuBarVisibility": "compact",
-    "window.commandCenter": false,
+  "window.menuBarVisibility": "compact",
+  "window.commandCenter": false,
+  
+  "editor.fontFamily": "Geist Mono",
+  "editor.lineHeight": 1.3,
+  "editor.fontSize": 14,
+  "editor.minimap.enabled": false,
+  "editor.stickyScroll.enabled": false,
+  "editor.cursorStyle": "line",
+  "editor.cursorBlinking": "expand",
+  "editor.cursorSmoothCaretAnimation": "explicit",
+  "editor.bracketPairColorization.enabled": false,
+  "editor.codeLens": false,
+  "editor.scrollbar.verticalScrollbarSize": 10,
+  "editor.lineNumbers": "relative",
+  "editor.renderLineHighlight": "none",
+  "editor.acceptSuggestionOnCommitCharacter": false,
 
-    "editor.fontFamily": "CommitMono Nerd Font",
-    "editor.lineHeight": 1.3,
-    "editor.fontSize": 15,
-    "editor.minimap.enabled": false,
-    "editor.stickyScroll.enabled": false,
-    "editor.cursorStyle": "line",
-    "editor.cursorBlinking": "expand",
-    "editor.cursorSmoothCaretAnimation": "explicit",
-    "editor.bracketPairColorization.enabled": false,
-    "editor.codeLens": false,
-    "editor.scrollbar.verticalScrollbarSize": 6,
-    "editor.lineNumbers": "relative",
-    "editor.renderLineHighlight": "none",
-    "editor.acceptSuggestionOnCommitCharacter": false,
+  "terminal.integrated.fontFamily": "Cascadia Code NF",
 
-    "explorer.compactFolders": false,
-    
-    "workbench.colorTheme": "Maron Theme: Solarized Planets",
-    "workbench.panel.showLabels": false,
-    "workbench.activityBar.location": "hidden",
-    "workbench.layoutControl.enabled": false,
-    "workbench.editor.showTabs": "single",
-    "workbench.tree.indent": 16,
-    "workbench.sideBar.location": "right",
+  "explorer.compactFolders": false,
+  "workbench.panel.showLabels": false,
+  "workbench.activityBar.location": "hidden",
+  "workbench.layoutControl.enabled": false,
+  "workbench.editor.showTabs": "single",
+  "workbench.tree.indent": 16,
+  "workbench.sideBar.location": "right",
 
-    "terminal.integrated.profiles.windows": {
-        "pwsh": {
-            "path": "pwsh",
-            "icon": "terminal-powershell",
-        },
-        "nu": {
-            "path": "nu",
-            "icon": "terminal-bash"
-        }
+  "terminal.integrated.profiles.windows": {
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
     },
-    "terminal.integrated.defaultProfile.windows": "nu",
-
-    "extensions.experimental.affinity": {
-        "vscodevim.vim": 1
-    },
-
-    "vim.useSystemClipboard": true,
-    "vim.highlightedyank.color": "rgba(255,255,255,0.1)",
-    "vim.highlightedyank.enable": true,
-
-    "git.blame.editorDecoration.enabled": true,
-    "svelte.enable-ts-plugin": true,
-
-    "[csharp]": {
-        "editor.defaultFormatter": "csharpier.csharpier-vscode",
-    },
-    "[svelte]": {
-        "editor.defaultFormatter": "svelte.svelte-vscode"
-    },
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[jsonc]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[css]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "nu": {
+      "path": "nu",
+      "icon": "terminal-bash"
     }
+  },
+  "terminal.integrated.defaultProfile.windows": "nu",
+
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
+
+  "vim.useSystemClipboard": true,
+  "vim.highlightedyank.color": "rgba(255,255,255,0.1)",
+  "vim.highlightedyank.enable": true,
+
+  "git.blame.editorDecoration.enabled": true,
+  "svelte.enable-ts-plugin": true,
+
+  "[csharp]": {
+    "editor.defaultFormatter": "csharpier.csharpier-vscode"
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "workbench.colorTheme": "Rosé Pine (no italics)",
+  "workbench.colorCustomizations": {
+    "editorIndentGuide.background1": "#ffffff08"
+  }
 }
