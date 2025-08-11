@@ -1,19 +1,5 @@
 [
     {
-        "key": "ctrl+t",
-        "command": "-workbench.action.showAllSymbols"
-    },
-    {
-        "key": "ctrl+t",
-        "command": "workbench.files.action.focusFilesExplorer",
-        "when": "!explorerViewletVisible"
-    },
-    {
-        "key": "ctrl+t",
-        "command": "workbench.action.closeSidebar",
-        "when": "explorerViewletVisible"
-    },
-    {
         "key": "ctrl+w",
         "command": "-workbench.action.closeActiveEditor",
     },
@@ -69,8 +55,31 @@
         "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+i",
+        "key": "ctrl+'",
         "command": "editor.action.showHover",
         "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+s",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "alt+d",
+        "command": "workbench.files.action.focusFilesExplorer",
+        "when": "!explorerViewletVisible"
+    },
+    {
+        "key": "alt+d",
+        "command": "workbench.action.closeSidebar",
+        "when": "explorerViewletVisible"
+    },
+    {
+        "key": "alt+a",
+        "command": "workbench.action.toggleAuxiliaryBar",
+    },
+    {
+        "key": "ctrl+t",
+        "command": "-extension.vim_ctrl+t",
+        "when": "editorTextFocus && vim.active && vim.use<C-t> && !inDebugRepl"
     },
 ]
