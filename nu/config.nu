@@ -1,7 +1,7 @@
 # config.nu
 #
 # Installed by:
-# version = "0.102.0"
+# version = "0.105.1"
 #
 # This file is used to override default Nushell settings, define
 # (or import) custom commands, or run any other startup tasks.
@@ -17,7 +17,8 @@
 # You can remove these comments if you want or leave
 # them for future reference.
 
-source ~/.config/nu/fnm.nu
+# source ~/.config/nu/fnm.nu
+use ~/.config/nu/git-aliases.nu *
 
 $env.config.buffer_editor = 'nvim'
 $env.config.show_banner = false
@@ -43,7 +44,7 @@ $env.PROMPT_COMMAND = { ||
         }
     }
     
-    [ $cwd $git (char nl) ] | filter {|x| $x | is-not-empty } | str join " "
+    [ $cwd $git (char nl) ] | where {|x| $x | is-not-empty } | str join " "
 }
 
 $env.PROMPT_COMMAND_RIGHT = ""
