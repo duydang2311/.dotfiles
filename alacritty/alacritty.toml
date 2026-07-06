@@ -1,0 +1,14 @@
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/solarized_osaka.toml"
+]
+
+[terminal]
+[terminal.shell]
+program = "nu.exe"
+
+[window]
+opacity = 0.98
+padding = { x = 4, y = 2 }
+dynamic_padding = true
+decorations = "None"
