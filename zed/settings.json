@@ -1,0 +1,100 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "vim_mode": true,
+  "agent_servers": {
+    "pi-acp": {
+      "default_config_options": {
+        "model": "deepseek/deepseek-v4-flash"
+      },
+      "type": "registry"
+    },
+    "claude-acp": {
+      "type": "registry"
+    }
+  },
+  "icon_theme": {
+    "mode": "light",
+    "light": "Symbols Icon Theme",
+    "dark": "Symbols Icon Theme",
+  },
+  "theme": {
+    "mode": "dark",
+    "light": "GitHub Light Monochrome",
+    "dark": "Solarized Osaka",
+  },
+  "cli_default_open_behavior": "new_window",
+  "buffer_font_family": "Cascadia Code",
+  "buffer_font_size": 14,
+  "ui_font_size": 14,
+  "ui_font_family": "Segoe UI Variable Text",
+  "terminal": {
+    "shell": { "with_arguments": { "program": "nu.exe", "args": ["-l"] } },
+  },
+  "agent": {
+    "default_profile": "ask",
+    "default_model": {
+      "provider": "deepseek",
+      "model": "deepseek-v4-flash",
+      "enable_thinking": true,
+      "effort": "high",
+    },
+    "favorite_models": [
+      {
+        "provider": "deepseek",
+        "model": "deepseek-v4-flash",
+        "enable_thinking": true,
+        "effort": "high",
+      },
+      {
+        "provider": "deepseek",
+        "model": "deepseek-v4-pro",
+        "enable_thinking": true,
+        "effort": "high",
+      },
+    ],
+    "model_parameters": [],
+  },
+  "format_on_save": "off",
+  "languages": {
+    // "CSharp": { "language_servers": [] },
+    // "HTML": { "language_servers": [] },
+    // "JavaScript": { "language_servers": [] },
+    // "TypeScript": { "language_servers": [] },
+    // "Svelte": { "language_servers": [] },
+    // "CSS": { "language_servers": [] },
+    // "TSX": { "language_servers": [] },
+  },
+  "language_models": {
+    "deepseek": {
+      "api_url": "https://api.deepseek.com",
+      "available_models": [
+        {
+          "name": "deepseek-v4-flash",
+          "display_name": "DeepSeek V4 Flash",
+          "max_tokens": 1000000,
+          "max_output_tokens": 384000,
+        },
+        {
+          "name": "deepseek-v4-pro",
+          "display_name": "DeepSeek V4 Pro",
+          "max_tokens": 1000000,
+          "max_output_tokens": 384000,
+        },
+      ],
+    },
+  },
+    "tab_bar": {
+      "show_nav_history_buttons": false
+    },
+    "tabs": {
+      "file_icons": true,
+      "git_status": true
+    }
+}
